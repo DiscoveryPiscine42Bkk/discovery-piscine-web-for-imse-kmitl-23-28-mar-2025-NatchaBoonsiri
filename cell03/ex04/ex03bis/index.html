@@ -1,0 +1,53 @@
+<head>
+  <title>To Do List</title>
+  <link rel="stylesheet" href="todo.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <button id="newBtn">New</button>
+  <div id="ft_list"></div>
+</body>
+
+<script>
+  $(document).ready(function() {
+    loadTodos();
+    
+    $('#newBtn').click(function() {
+        const todoText = prompt('Enter a new TODO:');
+        if (todoText && $.trim(todoText) !== '') {
+            addTodo($.trim(todoText));}});});
+
+function addTodo(text) {
+    const todoList = $('<div></div>', {class: 'todo-item',text: text});
+    
+    todoList.click(function() {
+        if (confirm('Do you want to remove this TODO?')) {
+            $(this).remove();
+            saveTodos();}});
+    
+    $('#ft_list').prepend(todoList);
+    saveTodos();}
+
+function saveTodos() {
+    const todos = [];
+    $('.todo-item').each(function() {
+        todos.unshift($(this).text());
+    });
+    
+    const expirationDate = new Date();
+    expirationDate.setTime(expirationDate.getTime() + (365*24*60*60*1000));
+    document.cookie = `todos=${JSON.stringify(todos)};path=/;expires=${expirationDate.toUTCString()}`;}
+
+function loadTodos() {
+    const cookieValue = document.cookie.split('; ').find(row => row.startsWith('todos='));
+    
+    if (cookieValue) {
+        try {
+            const todos = JSON.parse(cookieValue.substring(6));
+            todos.forEach(todo => {
+                if (todo && $.trim(todo) !== '') {
+                    addTodo(todo);}});} 
+        catch (e) {
+            console.error('Error parsing todos from cookie:', e);}}}
+</script>
