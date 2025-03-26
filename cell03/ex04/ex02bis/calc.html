@@ -1,0 +1,68 @@
+<head>
+    <title>Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="calc.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <form id="calc">
+            <input type="text" id="num1" placeholder="Enter first number" required>
+            <select id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" id="num2" placeholder="Enter second number" required>
+            <br>
+            <button type="submit">Try me!</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        setInterval(function () {alert("Please, use me...");}, 30000);
+    $("#calc").submit(function (event) {
+        event.preventDefault();
+
+        let num1 = Number($("#num1").val());
+        let num2 = Number($("#num2").val());
+        let op = $("#op").val();
+        let result;
+
+        if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0 || !Number.isInteger(num1) || !Number.isInteger(num2)) {
+            alert("Error :(");
+            console.log("Error :(");
+            return;}
+
+        switch (op) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                if (num2 == 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;}
+                result = num1 / num2;
+                break;
+            case "%":
+                if (num2 == 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;}
+                result = num1 % num2;
+                return;}
+
+        alert("Result: " + result);
+        console.log("Result: " + result);});});
+</script>
