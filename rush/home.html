@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rush Project by Natcha and Phadchaphon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1>Our Rush Project</h1>
+        <p>Who do you want to know?</p>
+        <div class="buttonlink">
+            <button class="btn">Natcha</button>
+            <button class="btn">Phadchaphon</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        $(".btn").eq(0).click(function() {
+            window.location.href = "Natcha.html";});
+
+        $(".btn").eq(1).click(function() {
+            window.location.href = "Phadchaphon.html";});});
+</script>
+</html>

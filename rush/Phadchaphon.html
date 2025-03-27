@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phadchaphon Resume</title>
+    <link rel="stylesheet" href="Phadchaphon.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#aboutme">About</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="aboutme">
+        <h1 class="ABOUTME">ABOUT ME</h1>
+        <div class="about">
+            <div class="about-center">
+                <h2>Name</h2>
+                <p>Phadchaphon Yuphithak</p>
+
+                <h2>Birthday</h2>
+                <p>07 Nov 2005</p>
+
+                <h2>Hobby</h2>
+                <p>Collect sneakers</p>
+                <p>listening to music</p>
+            </div>
+
+            <div class="about-center">
+                <img src="https://i.postimg.cc/RZknfMxB/122376.jpg" alt="Me">
+                <p>Phadchaphon</p>
+                 </div>
+
+                 <div class="about-center">
+                    <img src="https://i.postimg.cc/pXnWjKWm/122377.jpg" alt="Collect sneakers">
+                    <p>Collect sneakers</p>
+                     </div>
+
+                     <div class="about-center">
+                        <img src="https://i.postimg.cc/85j5n9SH/122378.jpg" alt="listening to music">
+                        <p>listening to music</p>
+                         </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h1 class="skills">skills</h1>
+        <div class="skills">
+                <Br><img src="https://i.postimg.cc/MKkTd9r7/122379.jpg" alt="Drawing">
+                <p>Drawing</p>
+            </div>
+            <div class="skills">
+                <Br><img src="https://i.postimg.cc/fThzxJJ5/122380.jpg" alt="Playing wind instruments">
+                <p>Playing wind instruments</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <div class="links">
+                <img src="https://i.postimg.cc/0Qp3x2P2/phachaxp-qr.png" alt="Instagram">
+                <p>Instagram</p>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $("nav ul li a").on("click", function(event){
+                if ($(this).attr("href").startsWith("#")) {
+                    event.preventDefault();
+                    var target = $(this).attr("href");
+                    $("html, body").animate({
+                        scrollTop: $(target).offset().top
+                    }, 800);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

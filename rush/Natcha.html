@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natcha Resume</title>
+    <link rel="stylesheet" href="Natcha.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#aboutme">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="aboutme">
+        <h1 class="ABOUTME">ABOUT ME</h1>
+        <div class="about">
+            <div class="about-left">
+                <h2>Birthday</h2>
+                <p>24 July 2005</p>
+
+                <h2>Favorite Songs</h2>
+                <p>loml - Taylor Swift</p>
+                <p>leave me in the dark - Alexander</p>
+                <p>Save Your Tears - The Weeknd</p>
+            </div>
+
+            <div class="about-center">
+                <img src="https://i.postimg.cc/vZ3jVR6m/profile.jpg" alt="Natcha Boonsiri">
+                <div class="name">NATCHA BOONSIRI <Br>(TANG-TANG)</div>
+            </div>
+
+            <div class="about-right">
+                <h2>Education:</h2>
+                <p><b>Middle School:</b></p> <p> Mater Dei</p>
+                <br><p><b>High School:</b> Mater Dei</p>
+                <br><p><b>Undergraduate Degree:</b> Institute of Music Science and Engineering</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h1>ACHIEVEMENTS</h1>
+        <div class="achievements">
+            <div class="SCORPnSE">
+                <Br><img src="https://i.postimg.cc/9QQ6QXNM/IMG-1888.png" alt="SCORP Debate Competition">
+                <Br><h2>Winning First Place: SCORP Debate Competition</h2>
+                <p>Debate competition organized by IFMASA Ramathibodi</p>
+            </div>
+            <div class="SCORPnSE">
+                <Br><img src="https://i.postimg.cc/V6FyNS1J/IMG-2006.jpg" alt="Social Entrepreneurship">
+                <Br><h2>Social Entrepreneurship: Raise Fund Activities</h2>
+                <p>Donate 100,000฿ from selling t-shirts to Seub Nakhasathien Foundation</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <div class="links">
+            <a href="https://github.com/DiscoveryPiscine42Bkk/discovery-piscine-web-for-imse-kmitl-23-28-mar-2025-NatchaBoonsiri">
+                <img src="https://i.postimg.cc/VsWxXZT2/IMG-4004.png" alt="GitHub">
+                <p>GitHub</p>
+            </a>
+            <a href="https://www.instagram.com/ttangttangg?igsh=MTBvOHZub3kxNjllcw==">
+                <img src="https://i.postimg.cc/ydXrswBB/IMG-4003.png" alt="Instagram">
+                <p>Instagram</p>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $("nav ul li a").on("click", function(event){
+                if ($(this).attr("href").startsWith("#")) {
+                    event.preventDefault();
+                    var target = $(this).attr("href");
+                    $("html, body").animate({
+                        scrollTop: $(target).offset().top
+                    }, 800);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
